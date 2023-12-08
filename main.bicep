@@ -1,7 +1,7 @@
 param acrName string 
 param location string 
 param appServicePlanName string
-param webAppName string ='Leo-webapp'
+param webAppName string ='Leo-webapp1'
 param containerRegistryImageName string = 'flask-demo'
 param containerRegistryImageVersion string = 'latest'
 @secure()
