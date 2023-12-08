@@ -22,16 +22,7 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    #Deploy Key Vault
-    - name: deploy-key-vault
-      uses: azure/arm-deploy@v1.0.9
-      with:
-        subscriptionId: ${{ env.SUBSCRIPTION_ID }}
-        resourceGroupName: ${{ env.RESOURCE_GROUP }}
-        template: ./key-vault.bicep
-        parameters: ./key-vault.json 
-        deploymentName: ${{ env.USER_ALIAS }}-kv
-        failOnStdErr: false
+    
     - name: Deploy Bicep template
       run: |
         az deployment group create \
